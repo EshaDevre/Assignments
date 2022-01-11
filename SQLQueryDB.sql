@@ -52,4 +52,4 @@ WHERE id=4;
 
 /* delete */
 
-DELETE FROM Students1 WHERE name='jeelu';
+DELETE FROM Students1 WHERE name='isha';
