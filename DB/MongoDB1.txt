@@ -1,0 +1,117 @@
+CREATE DATABASE
+use demo
+'switched to db demo'
+
+CREATE COLLECTION
+db.createCollection('course')
+{ ok: 1 }
+
+TOTAL DATABASES
+show dbs
+DB        41 kB
+admin     41 kB
+config   111 kB
+demo    8.19 kB
+local   73.7 kB
+
+TOTAL COLLECTIONS
+show collections
+course
+
+INSERT ONE DATA INTO COLLECTION
+db.course.insertOne({id : '1', name : 'bca', university : 'gtu'})
+{ acknowledged: true,
+  insertedId: ObjectId("61e67afc8e34ef4c715870f7") }
+
+DATA INSERTED
+db.course.find()
+{ _id: ObjectId("61e67afc8e34ef4c715870f7"),
+  id: '1',
+  name: 'bca',
+  university: 'gtu' }
+
+db.course.insertOne({id : '2', name : 'BE', university : 'SPU'})
+{ acknowledged: true,
+  insertedId: ObjectId("61e68a5d8e34ef4c715870f8") }
+
+INSERTING MORE THAN ONE DATA
+db.course.insertMany([{id : '3', name : 'BSC', university : 'SPU'},{id : '4', name : 'M.Tech', university : 'GTU'},{id : '5', name : 'MBA', university : 'PU'}])
+{ acknowledged: true,
+  insertedIds: 
+   { '0': ObjectId("61e68ad68e34ef4c715870f9"),
+     '1': ObjectId("61e68ad68e34ef4c715870fa"),
+     '2': ObjectId("61e68ad68e34ef4c715870fb") } }
+
+db.course.find()
+{ _id: ObjectId("61e67afc8e34ef4c715870f7"),
+  id: '1',
+  name: 'bca',
+  university: 'gtu' }
+{ _id: ObjectId("61e68a5d8e34ef4c715870f8"),
+  id: '2',
+  name: 'BE',
+  university: 'SPU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870f9"),
+  id: '3',
+  name: 'BSC',
+  university: 'SPU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fa"),
+  id: '4',
+  name: 'M.Tech',
+  university: 'GTU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fb"),
+  id: '5',
+  name: 'MBA',
+  university: 'PU' }
+
+UPDATE COMMAND
+db.course.updateOne({name : 'bca'},{"$set":{"name":"MCA"}})
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0 }
+
+db.course.find()
+{ _id: ObjectId("61e67afc8e34ef4c715870f7"),
+  id: '1',
+  name: 'MCA',
+  university: 'gtu' }
+{ _id: ObjectId("61e68a5d8e34ef4c715870f8"),
+  id: '2',
+  name: 'BE',
+  university: 'SPU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870f9"),
+  id: '3',
+  name: 'BSC',
+  university: 'SPU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fa"),
+  id: '4',
+  name: 'M.Tech',
+  university: 'GTU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fb"),
+  id: '5',
+  name: 'MBA',
+  university: 'PU' }
+
+DELETE COMMAND
+db.course.deleteOne({name: "BSC"})
+{ acknowledged: true, deletedCount: 1 }
+
+db.course.find()
+{ _id: ObjectId("61e67afc8e34ef4c715870f7"),
+  id: '1',
+  name: 'MCA',
+  university: 'gtu' }
+{ _id: ObjectId("61e68a5d8e34ef4c715870f8"),
+  id: '2',
+  name: 'BE',
+  university: 'SPU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fa"),
+  id: '4',
+  name: 'M.Tech',
+  university: 'GTU' }
+{ _id: ObjectId("61e68ad68e34ef4c715870fb"),
+  id: '5',
+  name: 'MBA',
+  university: 'PU' }

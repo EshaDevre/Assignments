@@ -16,7 +16,8 @@ ADD email varchar(50);
 INSERT INTO Stu
 VALUES(1,'Esha',21,'esha.devre@aimdek.com'),
 (2,'Jagruti',22,'jagruti.suthar@aimdek.com'),
-(3,'Jeel',23,'jeel.prajapati@aimdek.com');
+(3,'Jeel',23,'jeel.prajapati@aimdek.com'),
+(4,'xyz',18,'isha.devre@aimdek.com');
 
 Insert into stu(id,name,age)
 values(5,'abc',13)
@@ -42,3 +43,13 @@ where age like '1_';
 Select count(*), age from stu group by age
 
 select distinct age from stu
+
+/* Update */
+
+UPDATE Students1
+SET name = 'isha'
+WHERE id=4;
+
+/* delete */
+
+DELETE FROM Students1 WHERE name='isha';
