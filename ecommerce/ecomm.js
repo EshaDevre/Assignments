@@ -1,10 +1,12 @@
 const submitButton = document.getElementById("submitButton");
 var totalPrice = 0;
 var imgURL = '';
-function loadImg(event){
+function loadImg(event)
+{
     imgURL =  URL.createObjectURL(event.target.files[0]);
 }
-submitButton.addEventListener('click', function () {
+submitButton.addEventListener('click', function () 
+{
     const productName = document.getElementById("productName");
     const productImage = document.getElementById("productImage");
     const productDescription = document.getElementById("productDescription");
@@ -31,24 +33,26 @@ submitButton.addEventListener('click', function () {
     productPrice.value = '';
     productName.value = '';
     productDescription.value = '';
-    buyButton.onclick = function(){
-        totalPrice = parseInt(fPrice) + totalPrice ;
-        document.getElementById("totalPrice").innerText = totalPrice;
-        const cartLiName = document.createElement("li");
-        cartLiName.innerHTML = fNamePrice
-        var removeButton = document.createElement("button");
-        removeButton.innerHTML = "Delete from cart";
-        removeButton.classList.add("btn", "btn-primary");
-        const blankSpace = document.createElement("span");
-        blankSpace.innerHTML = "<br><br>";
-        cartLiName.appendChild(removeButton);
-        cartLiName.appendChild(blankSpace);
-        const cartListItems = document.getElementById("cartListItems");
-        cartListItems.appendChild(cartLiName);
-        removeButton.onclick = function() {
-            totalPrice = totalPrice - parseInt(fPrice);
-            document.getElementById("totalPrice").innerText = totalPrice;
-            cartListItems.removeChild(cartLiName);
-        }
+    buyButton.onclick = function()
+    {
+    totalPrice = parseInt(fPrice) + totalPrice ;
+    document.getElementById("totalPrice").innerText = totalPrice;
+    const cartLiName = document.createElement("li");
+    cartLiName.innerHTML = fNamePrice
+    var removeButton = document.createElement("button");
+    removeButton.innerHTML = "Delete from cart";
+    removeButton.classList.add("btn", "btn-primary");
+    const blankSpace = document.createElement("span");
+    blankSpace.innerHTML = "<br><br>";
+    cartLiName.appendChild(removeButton);
+    cartLiName.appendChild(blankSpace);
+    const cartListItems = document.getElementById("cartListItems");
+    cartListItems.appendChild(cartLiName);
+    removeButton.onclick = function() 
+    {
+    totalPrice = totalPrice - parseInt(fPrice);
+    document.getElementById("totalPrice").innerText = totalPrice;
+    cartListItems.removeChild(cartLiName);
+    }
     }
 });

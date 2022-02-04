@@ -1,5 +1,6 @@
 body{
-    background: rgb(247, 213, 219);
+    background: rgb(26, 25, 102);
+    color: whitesmoke;
 }
 li{
     text-decoration: none;
@@ -12,7 +13,7 @@ input{
     border-radius: 5px;
 }
 .inputButton{
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
     background: white;
     /* border-radius: 5px; */
 }
@@ -41,12 +42,16 @@ input{
     height: 125px;
 }
 .form{
-    border: 2px solid black;
+    border: 2px solid rgb(255, 254, 254);
     width: 70%;
 }
 .item{
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
 }
 .cart{
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
+}
+.btn{
+    background: lightblue;
+    color: black;
 }
