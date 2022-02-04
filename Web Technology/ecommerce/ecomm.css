@@ -1,0 +1,57 @@
+body{
+    background: rgb(26, 25, 102);
+    color: whitesmoke;
+}
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+input{
+    width: 50%;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.inputButton{
+    border: 2px solid rgb(255, 255, 255);
+    background: white;
+    /* border-radius: 5px; */
+}
+.btn-success{
+    width: auto;
+    text-align: center;
+}
+.container{
+    padding-top: 10px;
+    /* display: inline-block;
+    position: absolute;
+    left:60px;
+    top: 20px; */
+    /* border: 2px solid black; */
+}
+/* .item{
+    position: absolute;
+    right:34px;
+    top: 43px;
+    display: inline-block;
+} */
+.vertical-line{
+    display: inline-block;
+    border-left: 4px solid rgb(10, 9, 9);
+    margin: 0 10px;
+    height: 125px;
+}
+.form{
+    border: 2px solid rgb(255, 254, 254);
+    width: 70%;
+}
+.item{
+    border: 2px solid rgb(255, 255, 255);
+}
+.cart{
+    border: 2px solid rgb(255, 255, 255);
+}
+.btn{
+    background: lightblue;
+    color: black;
+}
